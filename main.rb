@@ -1,25 +1,25 @@
 def bubble_sort(array)
-    array.size.downto(1) do |len|
-        1.upto(len-1) do |idx|
-            if array[idx-1] > array[idx]
-                array[idx-1], array[idx] = array[idx], array[idx-1]
-            end
-        end
+  array.size.downto(1) do |len|
+    1.upto(len-1) do |idx|
+      if array[idx-1] > array[idx]
+        array[idx-1], array[idx] = array[idx], array[idx-1]
+      end
     end
-    array
+  end
+  array
 end
 
 
 def bubble_sort_by(array)
-    array.size.downto(1) do |len|
-        1.upto(len-1) do |idx|
-        	test = yield(array[idx-1], array[idx])
-            if test > 0
-                array[idx-1], array[idx] = array[idx], array[idx-1]
-            end
-        end
+  array.size.downto(1) do |len|
+    1.upto(len-1) do |idx|
+      test = yield(array[idx-1], array[idx])
+      if test > 0
+        array[idx-1], array[idx] = array[idx], array[idx-1]
+      end
     end
-    array
+  end
+  array
 end
 
 # test on integer array
