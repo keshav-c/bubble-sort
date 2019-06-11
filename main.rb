@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def bubble_sort(array)
   array.size.downto(1) do |len|
     1.upto(len - 1) do |idx|
