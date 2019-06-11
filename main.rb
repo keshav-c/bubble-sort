@@ -1,7 +1,8 @@
 def bubble_sort(array)
   array.size.downto(1) do |len|
     1.upto(len - 1) do |idx|
-      left, right = array[idx - 1], array[idx]
+      left = array[idx - 1]
+      right = array[idx]
       array[idx - 1], array[idx] = array[idx], array[idx - 1] if left > right
     end
   end
@@ -11,7 +12,8 @@ end
 def bubble_sort_by(array)
   array.size.downto(1) do |len|
     1.upto(len - 1) do |idx|
-      left, right = array[idx - 1], array[idx]
+      left = array[idx - 1]
+      right = array[idx]
       test = yield(left, right)
       array[idx - 1], array[idx] = array[idx], array[idx - 1] if test.positive?
     end
