@@ -14,7 +14,7 @@ def bubble_sort_by(array)
     array.size.downto(1) do |len|
         1.upto(len-1) do |idx|
         	test = yield(array[idx-1], array[idx])
-             if test > 0
+            if test > 0
                 array[idx-1], array[idx] = array[idx], array[idx-1]
             end
         end
@@ -28,9 +28,5 @@ p bubble_sort([4,3,78,2,0,2])
 
 # test on string array
 var = ["hi","hello","hey"]
-p bubble_sort_by(var) { |left,right| left.length - right.length} 
+p bubble_sort_by(var) {|left,right| left.length - right.length} 
 #=>["hi", "hey", "hello"]
-
-
-
-
